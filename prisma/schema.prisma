@@ -11,11 +11,12 @@ datasource db {
 }
 
 
-model BlogPost {
+model Meal {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   cover String
   title String
   content String
+  rating Float
   price Float
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
