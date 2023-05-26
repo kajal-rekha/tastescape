@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="h-20 bg-rose-100 text-gray-900 flex items-center">
+    <div className="h-20 bg-rose-100 opacity-75 text-gray-900 flex items-center">
       <div className="wrapper flex justify-between">
         <Link href="/" className="italic text-2xl font-semibold">
           taste<span className="text-rose-500">scape</span>
