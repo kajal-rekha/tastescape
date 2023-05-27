@@ -1,6 +1,7 @@
 import { currencyConverter } from "@/utils/currencyConverter";
 import Image from "next/image";
 import { AiOutlineStar } from "react-icons/ai";
+import Button from "./Button";
 
 const MealDetail = ({ meal }) => {
   return (
@@ -33,9 +34,13 @@ const MealDetail = ({ meal }) => {
             </span>
           </p>
         </div>
-        <button className="bg-black text-white py-3 px-6 rounded-md">
-          View Details
-        </button>
+        <Button
+          href={`/meals/${meal.id}`}
+          placeholder="View Details"
+          color="primary"
+          size="default"
+          size="full"
+        />
       </div>
     </div>
   );
