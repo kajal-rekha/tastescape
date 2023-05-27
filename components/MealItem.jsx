@@ -1,3 +1,4 @@
+import { currencyConverter } from "@/utils/currencyConverter";
 import Image from "next/image";
 import { AiOutlineStar } from "react-icons/ai";
 
@@ -21,7 +22,9 @@ const MealDetail = ({ meal }) => {
         <p className="text-gray-500">{meal.content}</p>
 
         <div className="flex justify-between">
-          <p className="text-lg font-semibold">Price:{meal.price}</p>
+          <p className="text-lg font-semibold">
+            Price: {currencyConverter(meal.price)}
+          </p>
           <p className="flex justify-between text-gray-500">
             <span className="flex items-center gap-1">
               {" "}
@@ -31,7 +34,7 @@ const MealDetail = ({ meal }) => {
           </p>
         </div>
         <button className="bg-black text-white py-3 px-6 rounded-md">
-          Buy Now
+          View Details
         </button>
       </div>
     </div>
