@@ -20,7 +20,7 @@ const MealDetail = ({ meal }) => {
       <div className="p-5 space-y-2">
         <h3 className="text-3xl font-medium">{meal.title}</h3>
 
-        <p className="text-gray-500">{meal.content}</p>
+        <p className="text-gray-500 h-28">{meal.content}</p>
 
         <div className="flex justify-between">
           <p className="text-lg font-semibold">

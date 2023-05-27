@@ -9,6 +9,7 @@ const buttonVariants = cva(
       color: {
         primary: "bg-black text-white hover:bg-gray-700",
         secondary: "bg-white text-black hover:bg-gray-300",
+        danger: "bg-rose-500 text-white hover:bg-rose-600",
       },
       size: {
         default: "py-3 px-6",
