@@ -5,24 +5,36 @@ import Button from "./Button";
 const Navbar = () => {
   const { data: session } = useSession();
   return (
-    <div className="h-20 bg-rose-100 opacity-75 text-gray-900 flex items-center">
-      <div className="wrapper flex justify-between">
+    <div className="h-20 bg-teal-900   text-gray-300  flex items-center">
+      <div className="wrapper flex justify-between items-center">
         <Link href="/" className="italic text-2xl font-semibold">
           taste<span className="text-rose-500">scape</span>
         </Link>
 
         <div className="flex gap-5">
-          <Link href="/" className="hover:text-rose-500 duration-300">
+          <Link
+            href="/"
+            className="hover:text-white transition-color duration-300"
+          >
             Home
           </Link>
-          <Link href="/meals" className="hover:text-rose-500 duration-300">
+          <Link
+            href="/meals"
+            className="hover:text-white transition-color duration-300"
+          >
             Meals
           </Link>
 
-          <Link href="/about" className="hover:text-rose-500 duration-300">
+          <Link
+            href="/about"
+            className="hover:text-white transition-color duration-300"
+          >
             About
           </Link>
-          <Link href="/contact" className="hover:text-rose-500 duration-300">
+          <Link
+            href="/contact"
+            className="hover:text-white transition-color duration-300"
+          >
             Contact
           </Link>
         </div>

@@ -15,6 +15,7 @@ const MealDetail = ({ meal }) => {
       router.push(`/users/login?destination=/checkout/${meal.id}`);
     }
   };
+
   return (
     <div className="wrapper py-10 min-h-screen">
       <div
