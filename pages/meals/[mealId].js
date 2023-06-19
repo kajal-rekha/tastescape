@@ -1,8 +1,20 @@
 import Button from "@/components/Button";
 import { getMeal } from "@/prisma/meals";
 import { currencyConverter } from "@/utils/currencyConverter";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const MealDetail = ({ meal }) => {
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  const handleOrder = () => {
+    if (session) {
+      router.push(`/checkout/${meal.id}`);
+    } else {
+      router.push(`/users/login?destination=/checkout/${meal.id}`);
+    }
+  };
   return (
     <div className="wrapper py-10 min-h-screen">
       <div
@@ -29,11 +41,12 @@ const MealDetail = ({ meal }) => {
           <p className=" text-3xl font-semibold">
             Price: {currencyConverter(meal.price)}
           </p>
-          <Button
-            href={`/checkout/${meal.id}`}
-            placeholder="Order Now"
-            size="full"
-          />
+          <button
+            onClick={handleOrder}
+            className="bg-black text-white py-3 rounded-lg w-full hover:bg-gray-700 duration-300"
+          >
+            Order Now
+          </button>
         </div>
       </div>
     </div>
