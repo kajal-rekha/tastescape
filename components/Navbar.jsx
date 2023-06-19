@@ -1,40 +1,34 @@
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import Button from "./Button";
-
+import Image from "next/image";
 const Navbar = () => {
   const { data: session } = useSession();
   return (
     <div className="h-20 bg-teal-900   text-gray-300  flex items-center">
       <div className="wrapper flex justify-between items-center">
-        <Link href="/" className="italic text-2xl font-semibold">
-          taste<span className="text-rose-500">scape</span>
-        </Link>
+        <div>
+          <Image
+            src="https://res.cloudinary.com/dh0ado2ir/image/upload/v1687201889/cooltext437920939371267_pzxptk.png"
+            alt="logo"
+            width={150}
+            height={150}
+            className="object-cover"
+          />
+        </div>
 
         <div className="flex gap-5">
-          <Link
-            href="/"
-            className="hover:text-white transition-color duration-300"
-          >
+          <Link href="/" className="hover:text-orange-400 duration-300">
             Home
           </Link>
-          <Link
-            href="/meals"
-            className="hover:text-white transition-color duration-300"
-          >
+          <Link href="/meals" className="hover:text-orange-400 duration-300">
             Meals
           </Link>
 
-          <Link
-            href="/about"
-            className="hover:text-white transition-color duration-300"
-          >
+          <Link href="/about" className="hover:text-orange-400 duration-300">
             About
           </Link>
-          <Link
-            href="/contact"
-            className="hover:text-white transition-color duration-300"
-          >
+          <Link href="/contact" className="hover:text-orange-400 duration-300">
             Contact
           </Link>
         </div>
