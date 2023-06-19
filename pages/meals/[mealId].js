@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import { getMeal } from "@/prisma/meals";
 import { currencyConverter } from "@/utils/currencyConverter";
 
@@ -28,9 +29,11 @@ const MealDetail = ({ meal }) => {
           <p className=" text-3xl font-semibold">
             Price: {currencyConverter(meal.price)}
           </p>
-          <button className="bg-black text-white py-3 rounded-lg w-full hover:bg-gray-700 duration-300">
-            Buy Now
-          </button>
+          <Button
+            href={`/checkout/${meal.id}`}
+            placeholder="Order Now"
+            size="full"
+          />
         </div>
       </div>
     </div>

@@ -39,7 +39,6 @@ const MealDetail = ({ meal }) => {
           placeholder="View Details"
           color="primary"
           size="default"
-          size="full"
         />
       </div>
     </div>
