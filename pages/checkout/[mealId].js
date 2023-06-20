@@ -3,7 +3,11 @@ import { getMeal } from "@/prisma/meals";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { useEffect } from "react";
-import Image from "next/image";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+
+// STRIPE PROMISE
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 const Checkout = ({ meal }) => {
   const { data: session } = useSession();
@@ -12,7 +16,7 @@ const Checkout = ({ meal }) => {
     email: "",
     mobile: "",
     address: "",
-    courseTitle: meal.title,
+    mealTitle: meal.title,
     price: meal.price,
   });
 
@@ -25,6 +29,32 @@ const Checkout = ({ meal }) => {
       }));
     }
   }, [session]);
+
+  // CHECKOUT HANDLER
+  const handleCheckout = async (e) => {
+    e.preventDefault();
+    const stripe = await stripePromise;
+
+    //send a post req to the server
+    const checkoutSession = await axios.post("/api/create-checkout-session", {
+      items: [meal],
+      name: formData.name,
+      email: formData.email,
+      mobile: formData.mobile,
+      address: formData.address,
+      mealTitle: formData.mealTitle,
+      mealId: meal.id,
+    });
+
+    // redirect to the stripe payment
+    const result = await stripe.redirectToCheckout({
+      sessionId: checkoutSession.data.id,
+    });
+
+    if (result.error) {
+      console.log(result.error.message);
+    }
+  };
 
   return (
     <div className="wrapper py-10 min-h-screen">
@@ -51,7 +81,10 @@ const Checkout = ({ meal }) => {
         </div>
 
         <div className="checkout-right flex justify-center">
-          <form className="flex flex-col gap-5  w-full lg:w-[35rem]">
+          <form
+            onSubmit={handleCheckout}
+            className="flex flex-col gap-5  w-full lg:w-[35rem]"
+          >
             <div className="form-control flex flex-col gap-2 mt-10">
               <p className="text-xl">
                 Unlock Exclusive Benefits: Checkout Now, Complete Form!
