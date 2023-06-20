@@ -35,11 +35,7 @@ const Navbar = () => {
 
         <div>
           {!session ? (
-            <Button
-              href="/users/login"
-              placeholder="Sign in"
-              color="secondary"
-            />
+            <Button href="/users/login" placeholder="Sign in" color="primary" />
           ) : (
             <Button
               href="/users/profile"

@@ -44,7 +44,7 @@ const MealDetail = ({ meal }) => {
           </p>
           <button
             onClick={handleOrder}
-            className="bg-black text-white py-3 rounded-lg w-full hover:bg-gray-700 duration-300"
+            className="bg-orange-400 text-white hover:bg-orange-500 py-3 rounded-lg w-full duration-300"
           >
             Order Now
           </button>

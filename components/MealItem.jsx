@@ -18,7 +18,7 @@ const MealDetail = ({ meal }) => {
       </div>
 
       <div className="p-5 space-y-2">
-        <h3 className="text-3xl  font-medium">{meal.title}</h3>
+        <h3 className="text-3xl font-medium">{meal.title}</h3>
 
         <p className="text-gray-300 h-28">
           {meal.content.substring(0, 100)}...
@@ -28,11 +28,11 @@ const MealDetail = ({ meal }) => {
           <p className="text-lg font-semibold">
             Price: {currencyConverter(meal.price)}
           </p>
-          <p className="flex justify-between text-gray-500">
+          <p className="flex justify-between text-gray-300">
             <span className="flex items-center gap-1">
               {" "}
-              <AiOutlineStar className="text-black" />{" "}
-              <span className="text-black font-semibold">{meal.rating}</span>
+              <AiOutlineStar />{" "}
+              <span className="  font-semibold">{meal.rating}</span>
             </span>
           </p>
         </div>

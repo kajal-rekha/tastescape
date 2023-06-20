@@ -36,7 +36,7 @@ const ProfilePage = ({ session }) => {
 
       <button
         onClick={logOutWithGoogle}
-        className="flex gap-2 items-center bg-black text-white py-3 px-6 rounded-lg mt-10 hover:bg-gray-700 duration-300"
+        className="flex gap-2 items-center bg-orange-500 text-white py-3 px-6 rounded-lg mt-10 hover:bg-orange-600 duration-300"
       >
         <span>
           <FiLogOut />
