@@ -1,5 +1,5 @@
 const ViewOrder = () => {
-  return <div>ViewOrder</div>;
+  return <div className="min-h-screen">ViewOrder</div>;
 };
 
 export default ViewOrder;

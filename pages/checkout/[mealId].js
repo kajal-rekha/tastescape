@@ -1,4 +1,3 @@
-import SectionHeader from "@/components/SectionHeader";
 import { getMeal } from "@/prisma/meals";
 import { useSession } from "next-auth/react";
 import { useState } from "react";

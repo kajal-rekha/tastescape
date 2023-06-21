@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import Button from "./Button";
-//import Image from "next/image";
+
 const Navbar = () => {
   const { data: session } = useSession();
   return (
