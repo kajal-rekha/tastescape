@@ -8,13 +8,6 @@ const Navbar = () => {
     <div className="h-20 bg-teal-900   text-gray-300  flex items-center">
       <div className="wrapper flex justify-between items-center">
         <div>
-          {/* <Image
-            src="https://res.cloudinary.com/dh0ado2ir/image/upload/v1687201889/cooltext437920939371267_pzxptk.png"
-            alt="logo"
-            width={150}
-            height={150}
-            className="object-cover"
-          /> */}
           <Link href="/" className="text-orange-400 font-medium text-xl">
             tastescape
           </Link>
@@ -28,6 +21,11 @@ const Navbar = () => {
             Meals
           </Link>
 
+          {session && (
+            <Link href="/orders" className="hover:text-orange-400 duration-300">
+              Orders
+            </Link>
+          )}
           <Link href="/about" className="hover:text-orange-400 duration-300">
             About
           </Link>

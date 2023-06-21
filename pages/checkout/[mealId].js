@@ -151,7 +151,7 @@ const Checkout = ({ meal }) => {
             </div>
 
             <div className="form-control flex flex-col gap-2">
-              <label htmlFor="address" className="cursor-pointer">
+              <label htmlFor="title" className="cursor-pointer">
                 Meal title
               </label>
               <input
@@ -163,7 +163,6 @@ const Checkout = ({ meal }) => {
                 className="bg-transparent outline-none border py-3 px-4 rounded-lg focus:border-gray-700"
               />
             </div>
-
             <div className="form-control flex flex-col gap-2">
               <label htmlFor="address" className="cursor-pointer">
                 Price (USD)
